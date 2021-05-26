@@ -1,0 +1,41 @@
+/*
+    @Created By: Chintan Ambaliya <chintan.ambaliya@bistasoutions.com>
+    Custom CSS
+*/
+
+.o_color_selection {
+	font-weight: bold;
+
+	* {
+		font-weight: bold;
+	}
+}
+
+.o_color_selection.bootstrap-select {
+
+	> select.mobile-device:focus + .dropdown-toggle,
+	.dropdown-toggle {
+		padding: 1.5px 10px !important;
+
+		&:hover,
+		&:focus {
+			outline-offset: 0;
+			background-color: unset !important;
+			outline: none !important;
+			border: 1px solid #cccccc !important;
+		}
+	}
+
+	a.selected :before {
+		font-family: FontAwesome;
+		position: absolute;
+		content: "\f00c";
+		top: 3px;
+		left: 6px;
+	}
+
+
+	&:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+		width: 100%;
+	}
+}

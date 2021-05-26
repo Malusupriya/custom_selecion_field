@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_selection" name="Backend Assets (used in backend interface)" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!--Css-->
+                <link href="/custom_selection_field/static/src/css/bootstrap_select.css" rel="stylesheet" type="text/css"/>
+			    <link href="/custom_selection_field/static/src/scss/custom.scss" rel="stylesheet" type="text/less"/>
+
+                <!--js-->
+                <script type="text/javascript" src="/custom_selection_field/static/src/js/relational_field.js"></script>
+                <script type="text/javascript" src="/custom_selection_field/static/src/js/bootstrap_select.js"></script>
+            </xpath>
+        </template>
+
+        <record id="sale_order_custom_selection" model="ir.ui.view">
+            <field name="name">sale.order.custom.selection</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="custom_priority"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

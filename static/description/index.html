@@ -1,0 +1,31 @@
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">How to Use?</h2>
+        <div class="oe_span12">
+            <p class='oe_mt32 text-justify'>
+                <pre>
+                    <code>
+e.g.
+
+from odoo.addons.custom_selection_field.models.fields import Selection
+...
+
+
+class SaleOrder(models.Model):
+    _inherit = "sale.order"
+
+    ...
+    priority = Selection([
+        ('low', 'Low', 'green'),
+        ('medium', 'Medium', 'orange'),
+        ('high', 'High', 'red'),
+    ], string='Priority', has_color=True)
+    ...
+                    </code>
+                </pre>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_separator"></section>
